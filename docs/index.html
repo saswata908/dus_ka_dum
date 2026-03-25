@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dus Ka Dum</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="starfield"></div>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay hidden" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loading-text">LOADING...</div>
+  <div class="loading-sub" id="loading-sub">Crunching millions of data points</div>
+</div>
+
+<div class="page">
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">🏆 INDIA'S BIGGEST SURVEY SHOW <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">GUESS WHAT INDIA THINKS <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">₹1 CRORE PRIZE MONEY <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">POWERED BY SURVEY DATA <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">🏆 INDIA'S BIGGEST SURVEY SHOW <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">GUESS WHAT INDIA THINKS <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">₹1 CRORE PRIZE MONEY <span class="ticker-dot">★</span></span>
+      <span class="ticker-item">POWERED BY SURVEY DATA <span class="ticker-dot">★</span></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-ring">
+      <div class="logo-circle">
+        <span class="num">10</span>
+        <span>KA</span>
+        <span>DUM</span>
+      </div>
+    </div>
+    <div class="show-title">DUS KA DUM</div>
+    <div class="show-subtitle">India's Power Survey</div>
+    <div><span class="live-badge"><span class="dot"></span>LIVE</span></div>
+  </header>
+
+  <!-- ===== SCREEN: INTRO / PROFILING ===== -->
+  <div class="screen active" id="screen-intro">
+    <div style="max-width:700px;margin:0 auto;padding:20px;">
+      <div class="intro-card">
+        <h2>🎯 Your Profile</h2>
+        <p>Tell us about yourself and we'll analyse people just like you from our survey data. Then guess what percentage of them said YES to each question — the closer you are, the more you win!</p>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Your Age Group</label>
+            <select class="form-control" id="inp-age">
+              <option value="18-24">18 - 24</option>
+              <option value="25-34" selected>25 - 34</option>
+              <option value="35-44">35 - 44</option>
+              <option value="45-54">45 - 54</option>
+              <option value="55+">55+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" id="inp-gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Non-binary">Non-binary</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Occupation</label>
+            <select class="form-control" id="inp-occupation">
+              <option value="Student">Student</option>
+              <option value="Working Professional" selected>Working Professional</option>
+              <option value="Freelancer">Freelancer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Daily Screen Time</label>
+            <select class="form-control" id="inp-screen">
+              <option value="1">Less than 1 hr</option>
+              <option value="2">1 - 2 hrs</option>
+              <option value="3" selected>2 - 4 hrs</option>
+              <option value="5">4 - 6 hrs</option>
+              <option value="7">More than 6 hrs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>No. of Platforms</label>
+            <select class="form-control" id="inp-platforms">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3 - 4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Daily Posts / Stories</label>
+            <select class="form-control" id="inp-posts">
+              <option value="0">Rarely (0)</option>
+              <option value="1" selected>1 - 2</option>
+              <option value="3">3 - 5</option>
+              <option value="6">6+</option>
+            </select>
+          </div>
+        </div>
+
+        <span class="section-label">📱 Primary Platform (pick one)</span>
+        <div class="platform-grid" id="platform-grid">
+          <div class="platform-chip selected" data-val="Instagram"><span class="icon">📸</span>Instagram</div>
+          <div class="platform-chip" data-val="YouTube"><span class="icon">▶️</span>YouTube</div>
+          <div class="platform-chip" data-val="Facebook"><span class="icon">👤</span>Facebook</div>
+          <div class="platform-chip" data-val="Twitter"><span class="icon">🐦</span>Twitter/X</div>
+          <div class="platform-chip" data-val="Snapchat"><span class="icon">👻</span>Snapchat</div>
+          <div class="platform-chip" data-val="LinkedIn"><span class="icon">💼</span>LinkedIn</div>
+          <div class="platform-chip" data-val="TikTok"><span class="icon">🎵</span>TikTok</div>
+          <div class="platform-chip" data-val="Reddit"><span class="icon">🤖</span>Reddit</div>
+        </div>
+
+        <span class="section-label">💭 How do you feel AFTER using social media?</span>
+        <div class="emotion-grid" id="emotion-grid">
+          <div class="emotion-chip selected" data-val="Happy">😊 Happy</div>
+          <div class="emotion-chip" data-val="Anxious">😰 Anxious</div>
+          <div class="emotion-chip" data-val="Inspired">💡 Inspired</div>
+          <div class="emotion-chip" data-val="Drained">😩 Drained</div>
+          <div class="emotion-chip" data-val="Bored">😐 Bored</div>
+          <div class="emotion-chip" data-val="Connected">🤝 Connected</div>
+          <div class="emotion-chip" data-val="Lonely">😔 Lonely</div>
+          <div class="emotion-chip" data-val="Motivated">🔥 Motivated</div>
+          <div class="emotion-chip" data-val="Stressed">😤 Stressed</div>
+        </div>
+
+        <div style="margin-top:24px;text-align:center;">
+          <button class="btn-primary" onclick="startGame()" style="font-size:22px;padding:16px 50px;">
+            🎮 START THE GAME
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN: GAME ===== -->
+  <div class="screen" id="screen-game">
+    <div class="scoreboard">
+      <div class="score-item">
+        <span class="score-label">Question</span>
+        <span class="score-value" id="qnum">1/10</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Winnings</span>
+        <span class="score-value" id="winnings">₹0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Lifelines</span>
+        <span class="score-value" id="lifeline-count">3</span>
+      </div>
+    </div>
+
+    <div class="game-layout">
+      <div class="prize-col">
+        <div class="prize-ladder-card">
+          <h3>Prizes</h3>
+          <div id="prize-ladder"></div>
+        </div>
+      </div>
+
+      <div class="main-col">
+        <div style="text-align:center;">
+          <div class="timer-ring">
+            <svg width="70" height="70" viewBox="0 0 70 70">
+              <circle class="timer-bg" cx="35" cy="35" r="30"/>
+              <circle class="timer-fg" id="timer-circle" cx="35" cy="35" r="30"/>
+            </svg>
+            <div class="timer-num" id="timer-num">30</div>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="survey-label">📊 Survey Question</div>
+          <div class="question-text" id="question-text">Loading...</div>
+          <div class="your-profile-hint" id="profile-hint"></div>
+          <div class="meter-container" id="meter-area" style="display:none;">
+            <div class="meter-label"><span>0%</span><span>INDIA SAYS...</span><span>100%</span></div>
+            <div class="meter-track">
+              <div class="meter-fill" id="meter-fill" style="width:0%">
+                <span class="meter-pct" id="meter-pct">0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="options-grid" id="options-grid"></div>
+
+        <div class="audience-section" id="audience-section">
+          <div class="audience-title">5️⃣0️⃣ TWO OPTIONS ELIMINATED</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:4px;">Two wrong options have been removed. Choose wisely!</div>
+        </div>
+
+        <div class="lifelines">
+          <button class="lifeline-btn" id="ll-audience" onclick="useLifeline('audience')">
+            <span class="lifeline-icon">5️⃣0️⃣</span><span>50:50</span>
+          </button>
+          <button class="lifeline-btn" id="ll-flip" onclick="useLifeline('flip')">
+            <span class="lifeline-icon">🔄</span><span>SKIP</span>
+          </button>
+          <button class="lifeline-btn" id="ll-double" onclick="useLifeline('double')">
+            <span class="lifeline-icon">💡</span><span>DOUBLE</span>
+          </button>
+        </div>
+
+        <div class="controls">
+          <button class="btn-primary" id="submit-btn" onclick="submitAnswer()">LOCK IT IN</button>
+          <button class="btn-secondary" onclick="quitGame()">SAFE EXIT</button>
+        </div>
+
+        <div class="result-panel" id="result-panel">
+          <div class="confetti" id="result-emoji">🏆</div>
+          <div class="result-title" id="result-title">CORRECT!</div>
+          <div class="result-score" id="result-score"></div>
+          <div class="model-insight" id="model-insight" style="display:none"></div>
+          <div class="controls" style="margin-top:16px;">
+            <button class="btn-primary" id="next-btn" onclick="nextQuestion()">NEXT ▶</button>
+            <button class="btn-secondary" onclick="endGame()">FINISH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN: FINAL ===== -->
+  <div class="screen" id="screen-final">
+    <div class="final-card">
+      <div class="final-trophy" id="final-trophy">🏆</div>
+      <div class="final-title" id="final-title">GAME OVER</div>
+      <div class="final-amount" id="final-amount">₹0</div>
+      <p id="final-msg" style="color:rgba(255,255,255,.7);font-size:16px;line-height:1.6;"></p>
+      <div class="insights-grid" id="insights-grid"></div>
+      <div style="margin-top:28px;">
+        <button class="btn-primary" onclick="location.reload()">🔄 PLAY AGAIN</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>★ DUS KA DUM ★ INDIA'S BIGGEST SURVEY SHOW ★</footer>
+</div>
+
+<!-- Scripts loaded in dependency order -->
+<script src="js/data.js"></script>
+<script src="../backend/backend.js"></script>
+<script src="../ai/ai.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
